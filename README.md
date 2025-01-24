@@ -1,5 +1,9 @@
 # Integracion-numerica-para-campos-electricos-y-magneticos-de-Pokemones
 Este proyecto estudia los campos eléctricos y magnéticos generados por distribuciones de carga en movimiento
+
+![Cubo](https://github.com/user-attachments/assets/ad18a941-e627-4d75-a68c-2a389090e9c7)
+
+
 Los pokemones considerados son:
 
 - **Electrode**: representado como una esfera definida por la ecuación  
