@@ -73,7 +73,7 @@ $$\rho(\vec{r}) =
 
 1. Para cada celda $i = 1 \dots N$:
    - Aproximar $\rho(\vec{r}')$ como constante dentro de la celda:  
-   $$
+$$
      \rho(\vec{r}') \approx \rho(\vec{r}_i).
      $$
 
@@ -81,15 +81,15 @@ $$\rho(\vec{r}) =
 
 3. Para cada celda $i = 1 \dots N$:
    - Calcular el vector de diferencia:  
-   $$
+$$
      \vec{d}_i \gets \vec{r} - \vec{r}_i.
      $$
    - Calcular la norma:  
-   $$
+$$
      d_i \gets |\vec{d}_i|.
      $$
    - Actualizar $\vec{E}$:  
-   $$
+$$
      \vec{E} \gets \vec{E} + \frac{\rho(\vec{r}_i)}{4 \pi \epsilon_0} \frac{\vec{d}_i}{d_i^3} \Delta V_i.
      $$
 
@@ -113,18 +113,16 @@ $$\rho(\vec{r}) =
 
 3. Para cada celda $i = 1 \dots N$:
    - Calcular el vector de diferencia:  
-   $$
-     \vec{d}_i \gets \vec{r} - \vec{r}_i.
-     $$
+$$\vec{d}_i \gets \vec{r} - \vec{r}_i$$
    - Calcular la norma:  
-   $$
+$$
      d_i \gets |\vec{d}_i|.
      $$
    - Calcular el producto cruzado:  
-   $$
+$$
      \vec{C}_i \gets \vec{v}(\vec{r}_i) \times \frac{\vec{d}_i}{d_i^3}.
    $$
    - Actualizar $\vec{B}$:  
-  $$
+$$
      \vec{B} \gets \vec{B} + \frac{\mu_0}{4\pi} \, \rho(\vec{r}_i) \, \vec{C}_i \, \Delta V_i.
      $$
