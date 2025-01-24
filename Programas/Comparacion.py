@@ -2,7 +2,7 @@
 """
 Created on Tue Nov 19 14:44:12 2024
 
-@author: serpi
+@author: CesarRAN
 """
 
 import numpy as np
