@@ -1,0 +1,2 @@
+# Integraci-n-num-rica-para-campos-el-ctricos-y-magn-ticos-de-Pokemones
+Este proyecto estudia los campos eléctricos y magnéticos generados por distribuciones de carga en movimiento, utilizando un algoritmo basado en las ecuaciones \(A\) y \(B\). Se analizaron dos modelos: un electrode con dos semiesferas de cargas opuestas en movimiento y Pikachu, cuyas cargas se localizan en sus mejillas representadas por elipsoides.
