@@ -38,7 +38,7 @@ $$\rho(\vec{r}) =
 
 
   
-  $$\rho(\vec{r}) = 
+$$\rho(\vec{r}) = 
   \begin{cases}
   Q & \text{si } (x + 5)^2 + y^2 + 5z^2 < 1 \\
   -Q & \text{si } (x - 5)^2 + y^2 + 5z^2 < 1 \\
@@ -57,3 +57,78 @@ $$\rho(\vec{r}) =
 2. **Pikachu**  
    - Se implementará una simulación numérica para calcular el campo eléctrico y magnético generados por la configuración de carga en las mejillas, modeladas por los dos elipsoides mencionados.  
    - Se asumirá un movimiento constante del pokemon a velocidad $\mathbf{v}$.
+
+
+---
+
+# Algoritmo para la integración numérica del campo eléctrico y magnético
+
+---
+
+## Algoritmo 1: Cálculo del campo eléctrico mediante discretización
+
+**Datos de entrada:**  
+- Volumen de integración $V$, dividido en $N$ celdas pequeñas con volúmenes $\Delta V_i$ y centros $\vec{r}_i$.
+
+**Resultado:**  
+- Campo eléctrico $\vec{E}(\vec{r})$ en un punto $\vec{r}$.
+
+---
+
+1. Para cada celda $i = 1 \dots N$:
+   - Aproximar $\rho(\vec{r}')$ como constante dentro de la celda:  
+     $$
+     \rho(\vec{r}') \approx \rho(\vec{r}_i).
+     $$
+
+2. Inicializar $\vec{E} \gets \vec{0}$.
+
+3. Para cada celda $i = 1 \dots N$:
+   - Calcular el vector de diferencia:  
+     $$
+     \vec{d}_i \gets \vec{r} - \vec{r}_i.
+     $$
+   - Calcular la norma:  
+     $$
+     d_i \gets |\vec{d}_i|.
+     $$
+   - Actualizar $\vec{E}$:  
+     $$
+     \vec{E} \gets \vec{E} + \frac{\rho(\vec{r}_i)}{4 \pi \epsilon_0} \frac{\vec{d}_i}{d_i^3} \Delta V_i.
+     $$
+
+---
+
+## Algoritmo 2: Cálculo del campo magnético mediante discretización (Ley de Biot-Savart)
+
+**Datos de entrada:**  
+- Volumen $V$ dividido en $N$ celdas con volúmenes $\Delta V_i$ y centros $\vec{r}_i$.
+
+**Resultado:**  
+- Campo magnético $\vec{B}(\vec{r})$ en un punto $\vec{r}$.
+
+---
+
+1. Para cada celda $i = 1 \dots N$:
+   - Aproximar $\rho(\vec{r}') \approx \rho(\vec{r}_i)$ (constante dentro de la celda).
+   - Aproximar $\vec{v}(\vec{r}') \approx \vec{v}(\vec{r}_i)$ (constante dentro de la celda).
+
+2. Inicializar $\vec{B} \gets \vec{0}$.
+
+3. Para cada celda $i = 1 \dots N$:
+   - Calcular el vector de diferencia:  
+     $$
+     \vec{d}_i \gets \vec{r} - \vec{r}_i.
+     $$
+   - Calcular la norma:  
+     $$
+     d_i \gets |\vec{d}_i|.
+     $$
+   - Calcular el producto cruzado:  
+     $$
+     \vec{C}_i \gets \vec{v}(\vec{r}_i) \times \frac{\vec{d}_i}{d_i^3}.
+     $$
+   - Actualizar $\vec{B}$:  
+     $$
+     \vec{B} \gets \vec{B} + \frac{\mu_0}{4\pi} \, \rho(\vec{r}_i) \, \vec{C}_i \, \Delta V_i.
+     $$
