@@ -53,7 +53,7 @@ $$\rho(\vec{r}) =
    - Se obtendrá una solución analítica para los campos $\mathbf{E}$ y $\mathbf{B}$ de acuerdo con la configuración de carga descrita.  
    - Se realizará una simulación numérica del campo eléctrico y magnético de Electroid, considerando su movimiento a una velocidad $\mathbf{v}$.  
    - Finalmente, se compararán los resultados de la simulación numérica con la solución analítica para verificar la precisión de la simulación.
-[Chispa_EP.webm.720p.vp9.webm](https://github.com/user-attachments/assets/0e1203fc-6d65-48a9-b959-46b5cb602344)
+  
 
 2. **Pikachu**  
    - Se implementará una simulación numérica para calcular el campo eléctrico y magnético generados por la configuración de carga en las mejillas, modeladas por los dos elipsoides mencionados.  
